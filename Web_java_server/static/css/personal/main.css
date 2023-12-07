@@ -1,0 +1,86 @@
+h1{
+	text-align: center;
+	font-size: clamp(2rem,6vw + 1.3em,5rem);
+}
+
+h2{
+	font-size: clamp(1.5rem, 4vw + 1.1rem, 4rem);
+}
+
+h3{
+	font-size: clamp(1.3rem, 4vw + 1rem, 2rem);
+}
+
+h4{
+	font-size: clamp(1.2rem, 4vw + 0.8rem,1.7rem);
+}
+
+p{
+	font-size: clamp(1rem, 4vw + 0.4rem, 1.6rem);
+	padding: 0 3px;
+}
+
+.carousel-item{
+	height: auto;
+	max-height: 500px;
+	text-shadow: 1px 0 0px black,
+	0 1px 0px black,
+	-1px 0 0px black,
+	0 -1px 0px black;
+}
+
+.paragraph{
+	margin-top: clamp(2rem, 2vw + 1rem, 5rem);
+}
+
+section{
+	margin: 2em 0;
+}
+
+#tour-masters{
+	display: flex;
+	justify-content: space-around;
+	height: auto;
+	width: 100%;
+}
+
+#tour-masters a{
+	font-size: clamp(0.8rem, 4vw + 0.4rem, 1.6rem);
+	padding: 0 3px;
+}
+
+.card{
+	margin: 5px 0;
+}
+
+.big-card{
+	max-height: 500px;
+}
+
+#crumb{
+	font-size: 1.5em;
+}
+
+.breadcrumb{
+	margin-left: 3px;
+}
+
+.accordion-button:not(.collapsed){
+	background: dodgerblue;
+}
+
+.accordion-button.collapsed{
+	color: black
+}
+
+.accordion-button:not(.collapsed) h4{
+	color: white
+}
+
+#accordion-row{
+	width: 100%;
+}
+
+.alert-warning{
+	font-size: clamp(0.8rem, 4vw + 0.4rem, 1rem);
+}

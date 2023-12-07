@@ -1,0 +1,7 @@
+footer{
+	display: flex;
+	background: royalblue;
+	justify-content: space-around;
+	align-items: center;
+	min-height: clamp(0.2rem,4vw + 0.4rem,0.6rem);
+}
