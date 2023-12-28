@@ -1,0 +1,365 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+	<!--meta data-->
+	<meta charset="UTF-8">
+	<title>Forest Encyclopedia</title>
+	<meta name="author" content="IIIIIIIIIIIIIIIII">
+	<meta name="description" content="Site about forests">
+	<link rel="shortcut icon" href="{% static 'favicon.png'%}" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--include bootstrap-->
+	<link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet" crossorigin="anonymous">
+	<script src="{% static 'js/bootstrap.bundle.min.js'%}" crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--include css and js-->
+	<link rel="stylesheet" href="{% static 'css/personal/header.css'%}">
+	<link rel="stylesheet" href="{% static 'css/personal/main.css'%}">
+	<link rel="stylesheet" href="{%  static 'css/personal/footer.css'%}">
+	<script src="{% static 'js/script.js'%}"></script>
+</head>
+<body>
+<header>
+	<div class="row center-cls" id="above-header">
+		<img src="{% static 'img/Evergreen_Forests.png'%}" alt="logo" id="img_logo">
+		<h1>Амазонские леса</h1>
+{#        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#account-log" id="account-btn">#}
+{#            Личный кабинет#}
+{#        </button>#}
+        {% if user.is_authenticated %}
+            <a href="{% url 'user_acc' %}" class="btn btn-outline-primary btn-sm" id="account-btn">
+                Личный кабинет
+            </a>
+        {% else %}
+            <a href="{% url 'user_login' %}" class="btn btn-outline-primary btn-sm" id="account-btn">
+                Войти
+            </a>
+        {% endif %}
+	</div>
+</header>
+<main>
+	<nav id="nav-bar">
+		<ul>
+			<li class="nav-item dropdown">
+				<a href="#" class="link-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Информация</a>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#about" class="link-dark dropdown-item">О нас</a>
+					</li>
+					<li>
+						<a href="#forest" class="link-dark dropdown-item">О лесах Амазонии</a>
+					</li>
+					<li>
+						<a href="#excursion" class="link-dark dropdown-item">Об экскурсиях</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<a href="#FAQ" class="link-light">ЧаВО</a>
+		<a href="#no-field-alert" class="link-light">Подписаться на рассылку</a>
+	</nav>
+
+<!--	Login-->
+{#	<div class="modal fade" id="account-log" tabindex="-1" role="dialog" aria-labelledby="account-log" aria-hidden="true">#}
+{#		<div class="modal-dialog modal-dialog-centered" role="document">#}
+{#			<div class="modal-content">#}
+{#				<div class="modal-header">#}
+{#					<h3 class="modal-title" id="exampleModalLongTitle">Вход в аккаунт</h3>#}
+{#					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">#}
+{#						<span aria-hidden="true">&times;</span>#}
+{#					</button>#}
+{#				</div>#}
+{#				<div class="modal-body">#}
+{#					<div class="mb-3" id="email-login">#}
+{#						<label for="email" class="form-label">Адрес электронной почты</label>#}
+{#						<input type="email" class="form-control" id="email" placeholder="name@example.com">#}
+{#					</div>#}
+{#					<div class="mb-3" id="password-login">#}
+{#						<label for="password" class="form-label">Пароль</label>#}
+{#						<input type="password" class="form-control" id="password">#}
+{#					</div>#}
+{#				</div>#}
+{#				<div class="modal-footer">#}
+{#					<button type="button" class="btn btn-primary">Войти</button>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#	</div>#}
+
+	<div id="newsbar" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#newsbar" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#newsbar" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#newsbar" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="{% static 'img/amazon_1.jpg'%}" class="d-block w-100" alt="forest">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>Прекрасный тропический лес</h5>
+					<p>Пояснение 1</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="{% static 'img/amazon_2.jpg'%}" class="d-block w-100" alt="animals">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>Новый вид попугаев появился неподалёку от Аляски</h5>
+					<p>Пояснение 2</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="{% static 'img/amazon_3.jpeg'%}" class="d-block w-100" alt="fire">
+				<div class="carousel-caption d-none d-md-block">
+					<h5>Пожары полыхают повсюду</h5>
+					<p>Пояснение 3</p>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#newsbar" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#newsbar" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+
+<!--	Alert-->
+	<div class="alert alert-warning alert-dismissible fade show" aria-hidden="true" role="alert" id="no-field-alert">
+		<strong>Упс!</strong><br>Сайт всё ещё находится в разработке. Просим быть терпеливыми.
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" data-toggle="tooltip" title="Оставляйте ваши предложения и замечания на github"></button>
+	</div>
+
+	<div class="paragraph" id="about">
+		<h1>О нашей организации</h1>
+		<section>
+			<h2>Кто мы</h2>
+			<p><strong>Организация защиты лесов Амазонии</strong> — серьёзная организация!</p>
+			<p>
+			Каждый год выжигается огромное количество лесов! И только мы, люди, способны этому противостоять!<br>
+			Наша организация занимается защитой лесов Амазонии уже более 5-ти лет, и за это время мы добились значительных успехов в области защиты окружающей среды!
+			</p>
+		</section>
+		<section>
+			<h2>Как мы это делаем</h2>
+			<p>Всё очень просто! Мы <strong>проводим экскурсии</strong>, тем самым собирая средства на защиту лесов и просвещая людей!</p>
+			<p>
+				Подробности про экскурсии вы сможете узнать <a class="link-dark" href="#excursion">ниже</a>.
+			</p>
+		</section>
+	</div>
+	<div class="paragraph" id="forest">
+		<h1>О лесах Амазонии</h1>
+		<section>
+			<h2>Местонахождение</h2>
+			<p>Захватывает территорию девяти государств: (Бразилия, Перу, Колумбия, Венесуэла, Эквадор, Боливия, Гайана, Суринам, Французская Гвиана).</p>
+		</section>
+		<section>
+			<h2>Фауна</h2>
+			<p>
+				В амазонских джунглях обитает много животных, которые могут представлять серьёзную опасность для человека.
+			</p>
+			<p>
+				Из крупных хищников здесь обитают ягуар и кайман. Также, здесь обитают змеи анаконда и ядовитые шушуя и жарарака, а также «коричневый паук» Loxosceles. В реках водятся электрические скаты, пираньи, рыба кандеру (якобы способная проникать в мочевыводящие пути человека и других животных), а также пресноводный дельфин иния.
+			</p>
+			<p>
+				На деревьях живут различные виды бесхвостых земноводных из семейства Древолазов, кожа которых выделяет сильный липофильный яд — батрахотоксин. Здесь также обитают различные паразиты и переносчики инфекционных заболеваний. В частности, некоторые виды летучих мышей являются естественным резервуаром вируса бешенства, а москиты— переносчики лейшманиозов.
+			</p>
+		</section>
+	</div>
+	<div class="paragraph" id="excursion">
+		<h1>Об экскурсиях</h1>
+		<section>
+			<h2>План экскурсий</h2>
+			<p>
+				*Вставить информацию про проводимые экскурсии*
+			</p>
+		</section>
+		<section>
+			<h2>Оплата</h2>
+			<p>
+				*Вставить информацию про проводимые экскурсии*
+			</p>
+		</section>
+		<section>
+			<h2>Список экскурсоводов</h2>
+			<div class="row" id="tour-masters">
+				<div class="card" style="width: 18rem;">
+					<img src="{% static '' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h4 class="card-title">Сотрудник</h4>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Узнать более подробно</a>
+					</div>
+				</div>
+				<div class="card" style="width: 18rem;">
+					<img src="{% static '' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h4 class="card-title">Сотрудник</h4>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Узнать более подробно</a>
+					</div>
+				</div>
+				<div class="card d-none d-md-block" style="width: 18rem;">
+					<img src="{% static '' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h4 class="card-title">Сотрудник</h4>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Узнать более подробно</a>
+					</div>
+				</div>
+				<div class="card d-none d-md-block" style="width: 18rem;">
+					<img src="{% static '' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h4 class="card-title">Сотрудник</h4>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Узнать более подробно</a>
+					</div>
+				</div>
+				<div class="card d-none d-lg-block" style="width: 18rem;">
+					<img src="{% static '' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h4 class="card-title">Сотрудник</h4>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Узнать более подробно</a>
+					</div>
+				</div>
+				<div class="card d-none d-lg-block" style="width: 18rem;">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<h4 class="card-title">Сотрудник</h4>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Узнать более подробно</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="paragraph" id="FAQ">
+		<h1>Частозадаваемые вопросы</h1>
+		<div>
+			<nav aria-label="FAQ-crumb" id="crumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Главная</a></li>
+					<li class="breadcrumb-item active" aria-current="page">ЧаВО</li>
+				</ol>
+			</nav>
+		</div>
+		<div class="row" id="accordion-row">
+			<div class="accordion col-lg-6 col-md-6" id="acc1">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="he11">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#co11" aria-expanded="true" aria-controls="co11">
+							<h4>
+								Вопрос #1
+							</h4>
+						</button>
+					</h2>
+					<div id="co11" class="accordion-collapse collapse" aria-labelledby="he11" data-bs-parent="#acc1">
+						<div class="accordion-body">
+							<p>
+								<strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="he12">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#co12" aria-expanded="false" aria-controls="co12">
+							<h4>В чём сила, брат?</h4>
+						</button>
+					</h2>
+					<div id="co12" class="accordion-collapse collapse" aria-labelledby="he12" data-bs-parent="#acc1">
+						<div class="accordion-body">
+							<p>
+								Вот скажи мне, американец, в чём сила? Разве в деньгах? Вот и брат говорит, что в деньгах. У тебя много денег, и чего? Я вот думаю, что сила в правде: у кого правда, тот и сильнее
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="he13">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#co13" aria-expanded="false" aria-controls="co13">
+							<h4>Вопрос с прокручивающимся текстом</h4>
+						</button>
+					</h2>
+					<div id="co13" class="accordion-collapse collapse" aria-labelledby="he13" data-bs-parent="#acc1">
+						<div class="accordion-body overflow-scroll big-card">
+							<p>
+								Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).
+								<br><br>
+								Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).
+								<br><br>
+								Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).
+								<br><br>
+								Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="accordion col-lg-6 col-md-6" id="acc2">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="he21">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#co21" aria-expanded="true" aria-controls="co21">
+							<h4>
+								Вопрос #1
+							</h4>
+						</button>
+					</h2>
+					<div id="co21" class="accordion-collapse collapse" aria-labelledby="he21" data-bs-parent="#acc2">
+						<div class="accordion-body">
+							<p>
+								<strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="he22">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#co22" aria-expanded="false" aria-controls="co22">
+							<h4>В чём сила, брат?</h4>
+						</button>
+					</h2>
+					<div id="co22" class="accordion-collapse collapse" aria-labelledby="he22" data-bs-parent="#acc2">
+						<div class="accordion-body">
+							<p>
+								Вот скажи мне, американец, в чём сила? Разве в деньгах? Вот и брат говорит, что в деньгах. У тебя много денег, и чего? Я вот думаю, что сила в правде: у кого правда, тот и сильнее
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="he23">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#co23" aria-expanded="false" aria-controls="co23">
+							<h4>Вопрос с прокручивающимся текстом</h4>
+						</button>
+					</h2>
+					<div id="co23" class="accordion-collapse collapse" aria-labelledby="he23" data-bs-parent="#acc2">
+						<div class="accordion-body overflow-scroll big-card">
+							<p>
+								Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).
+								<br><br>
+								Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).
+								<br><br>
+								Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).
+								<br><br>
+								Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<footer>
+<a class="text-light" href="https://github.com/Jrol123/Bootstrap-controlSite" target="_blank">Ссылка на <strong>github</strong></a>
+<a class="text-light" href="t.me/blueViolin34" target="_blank">Ссылка на <strong>telegram</strong></a>
+</footer>
+</body>
+</html>
