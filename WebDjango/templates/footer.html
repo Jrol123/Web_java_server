@@ -5,9 +5,11 @@
     <button type="button" class="btn btn-primary btn-sm" id="alertButton" onclick="alert('Тестовое оповещение')">
         Кнопка для проверки уведомлений
     </button>
+    {% if user.is_authenticated %}
     <a type="button" class="btn btn-primary btn-sm" id="exitButton" href="{% url 'logout' %}?next={% url 'main' %}" target="_self">
         Выход из аккаунта
     </a>
+    {% endif %}
     <a class="text-light" href="t.me/blueViolin34" target="_blank">
         Ссылка на <strong>telegram</strong>
     </a>
