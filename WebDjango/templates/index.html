@@ -1,67 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ru" xmlns="http://www.w3.org/1999/html">
-<head>
-    <!--meta data-->
-    <meta charset="UTF-8">
-    <title>Forest Encyclopedia</title>
-    <meta name="author" content="IIIIIIIIIIIIIIIII">
-    <meta name="description" content="Site about forests">
-    <link rel="shortcut icon" href="{% static 'favicon.png' %}" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--include bootstrap-->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" crossorigin="anonymous">
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--include css and js-->
-    <link rel="stylesheet" href="{% static 'css/personal/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/personal/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css/personal/footer.css' %}">
-    <script src="{% static 'js/script.js' %}"></script>
-</head>
+{% include "head.html" %}
 <body>
-<header>
-    <div class="row center-cls" id="above-header">
-        <img src="{% static 'img/Evergreen_Forests.png' %}" alt="logo" id="img_logo">
-        <h1>Амазонские леса</h1>
-        {#        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#account-log" id="account-btn">#}
-        {#            Личный кабинет#}
-        {#        </button>#}
-        {% if user.is_authenticated %}
-            <a href="{% url 'user_acc' %}" class="btn btn-outline-primary btn-sm" id="account-btn">
-                Личный кабинет
-            </a>
-        {% else %}
-            <a href="{% url 'user_login' %}" class="btn btn-outline-primary btn-sm" id="account-btn">
-                Войти
-            </a>
-        {% endif %}
-    </div>
-</header>
+{% include "up_nav.html" %}
 <main>
-    <nav id="nav-bar">
-        <ul>
-            <li class="nav-item dropdown">
-                <a href="#" class="link-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                   aria-expanded="false">Информация</a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="#about" class="link-dark dropdown-item">О нас</a>
-                    </li>
-                    <li>
-                        <a href="#forest" class="link-dark dropdown-item">О лесах Амазонии</a>
-                    </li>
-                    <li>
-                        <a href="#excursion" class="link-dark dropdown-item">Об экскурсиях</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <a href="#FAQ" class="link-light">ЧаВО</a>
-        <a href="#no-field-alert" class="link-light">Подписаться на рассылку</a>
-    </nav>
+    {% include "nav.html" %}
+
 
     <!--	Login-->
     {#	<div class="modal fade" id="account-log" tabindex="-1" role="dialog" aria-labelledby="account-log" aria-hidden="true">#}
@@ -460,11 +405,6 @@
         </div>
     </div>
 </main>
-<footer>
-    <a class="text-light" href="https://github.com/Jrol123/Bootstrap-controlSite" target="_blank">Ссылка на <strong>github</strong></a>
-    <button type="button" class="btn btn-primary btn-sm" id="alertButton" onclick="alert('Тестовое оповещение')">Кнопка для проверки уведомлений</button>
-    <a class="text-light" href="t.me/blueViolin34" target="_blank">Ссылка на <strong>telegram</strong></a>
-{#    <script src = "{% static 'js/script.js'%}" ></script>#}
-</footer>
+{% include "footer.html" %}
 </body>
 </html>

@@ -1,0 +1,19 @@
+{% load static %}
+<header>
+    <div class="row center-cls" id="above-header">
+        <img src="{% static 'img/Evergreen_Forests.png' %}" alt="logo" id="img_logo">
+        <h1>Амазонские леса</h1>
+        {#        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#account-log" id="account-btn">#}
+        {#            Личный кабинет#}
+        {#        </button>#}
+        {% if user.is_authenticated %}
+            <a href="{% url 'user_acc' %}" class="btn btn-outline-primary btn-sm" id="account-btn">
+                Личный кабинет
+            </a>
+        {% else %}
+            <a href="{% url 'user_login' %}" class="btn btn-outline-primary btn-sm" id="account-btn">
+                Войти
+            </a>
+        {% endif %}
+    </div>
+</header>

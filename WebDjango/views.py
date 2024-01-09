@@ -3,8 +3,10 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import LoginForm
 
+
 def index(request):
     return render(request, 'index.html')
+
 
 def user_login(request):
     if request.method == 'POST':
