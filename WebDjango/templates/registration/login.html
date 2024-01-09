@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-
 <head>
     <title>Вход</title>
 
@@ -10,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static '/login_static/css/login_style.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static '/login_static/css/login_style.css' %}" type="text/css" media="all"/>
 
     <script>
         function myFunction() {
@@ -27,62 +26,63 @@
 
 <body>
 
-	<script>
-		  $(document).ready(function(){
-			$('#myForm').submit(function(e){
-			  e.preventDefault(); // Предотвращение стандартного поведения формы
-			  var formData = $(this).serialize(); // Получение данных формы
-			  $.ajax({
-				type: 'POST',
-				url: 'обработчик', // Замените на URL вашего обработчика формы
-				data: formData,
-				success: function(response){
-				  // Обработка ответа от сервера
-				  console.log(response); // Пример: вывод ответа в консоль
-				}
-			  });
-			});
-		  });
+<script>
+    $(document).ready(function () {
+        $('#myForm').submit(function (e) {
+            e.preventDefault(); // Предотвращение стандартного поведения формы
+            var formData = $(this).serialize(); // Получение данных формы
+            $.ajax({
+                type: 'POST',
+                url: 'обработчик', // Замените на URL вашего обработчика формы
+                data: formData,
+                success: function (response) {
+                    // Обработка ответа от сервера
+                    console.log(response); // Пример: вывод ответа в консоль
+                }
+            });
+        });
+    });
 </script>
-    <div class="signinform">
+<div class="signinform">
 
-        <!-- container -->
-        <div class="container">
-            <!-- main content -->
-            <div class="w3l-form-info">
-                <div class="w3_info">
-                    <h2>вход в систему</h2>
-                    <form action="" method="post">
+    <!-- container -->
+    <div class="container">
+        <!-- main content -->
+        <div class="w3l-form-info">
+            <div class="w3_info">
+                <h2>вход в систему</h2>
+                <form action="" method="post">
 
-                        {% csrf_token %}
+                    {% csrf_token %}
 
-                        {% if form.errors %}
-                          <p class="error-message">Неверное имя пользователя или пароль</p>
-                        {% endif %}
+                    {% if form.errors %}
+                        <p class="error-message">Неверное имя пользователя или пароль</p>
+                    {% endif %}
 
-                        <div class="input-group">
-                            <span><i class="fas fa-user" aria-hidden="true"></i></span>
-                            {{ form.username }}
-                        </div>
-                        <div class="input-group">
-                            <span><i class="fas fa-key" aria-hidden="true"></i></span>
-                            {{ form.password }}
-                        </div>
-                        <button class="btn btn-primary btn-block" type="submit">вход</button>
-                    </form>
+                    <div class="input-group">
+                        <span><i class="fas fa-user" aria-hidden="true"></i></span>
+                        {{ form.username }}
+                    </div>
+                    <div class="input-group">
+                        <span><i class="fas fa-key" aria-hidden="true"></i></span>
+                        {{ form.password }}
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">вход</button>
+                    <div class="col-12"><a class="reg-cls nav-cls link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="{% url 'registration' %}">Зарегистрироваться</a> </div>
+                </form>
 
-                    
-                </div>
+
             </div>
-            <!-- //main content -->
         </div>
-        <!-- //container -->
-
-    
+        <!-- //main content -->
     </div>
+    <!-- //container -->
 
-    <!-- fontawesome v5-->
-    <script src="{% static '/login_static/js/fontawesome.js' %}"></script>
+
+</div>
+
+<!-- fontawesome v5-->
+<script src="{% static '/login_static/js/fontawesome.js' %}"></script>
 
 </body>
 
