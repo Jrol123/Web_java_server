@@ -53,9 +53,9 @@ def user_registration(request):
             info.save()
             animals = cd['favourite_animals']
             for animal_name in animals:
-                info.favourite_animals.add(Animals.objects.get(animal=animal_name))
+                info.favourite_animals.add(Animals.objects.get(animal_name=animal_name))
             return render(request, 'registration/congrats.html', {'first': cd['first_name'],
-                                                                  'second': cd['second_name'],
+                                                                  'second': cd['last_name'],
                                                                   'third': cd['patronymic'],
                                                                   'town': cd['town'],
                                                                   'phone': cd['phone']})
@@ -66,3 +66,7 @@ def user_registration(request):
         form = RegistrationForm()
 
         return render(request, 'registration/create_new.html', {'form': form, "first": 1})
+
+
+# def news(request):
+#     return render(request, 'addition/news.html')

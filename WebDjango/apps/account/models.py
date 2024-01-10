@@ -16,6 +16,7 @@ class UserInfo(models.Model):
     phone_number = models.CharField(max_length=10)
     patronymic = models.CharField(max_length=50, null=True)
     favourite_animals = models.ManyToManyField(Animals)
+    role = models.ForeignKey(Roles, null=True, on_delete=models.DO_NOTHING)
 
 
 class Subscribe(models.Model):
