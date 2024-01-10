@@ -56,6 +56,8 @@ def user_registration(request):
             for animal_name in animals:
                 animal_name_real = Animals.objects.get(animal_name=animal_name)
                 info.favourite_animals.add(animal_name_real)
+                end_animals.append(animal_name_real.animal_name)
+                print(animal_name_real.animal_name)
             return render(request, 'registration/congrats.html', {'first': cd['first_name'],
                                                                   'second': cd['last_name'],
                                                                   'third': cd['patronymic'],
