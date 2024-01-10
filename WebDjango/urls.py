@@ -28,5 +28,5 @@ urlpatterns = [
     path('login_account', views.user_login, name='user_login'),
     path('registration', views.user_registration, name='registration'),
     path('account/', include('account.urls'), name='user_account'),
-    # path('news/', views.news, name='news')
+    path('news/', views.excursions, name='excursions')
 ]

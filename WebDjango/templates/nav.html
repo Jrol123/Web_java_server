@@ -6,20 +6,20 @@
                aria-expanded="false">Информация</a>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="#about" class="link-dark dropdown-item">О нас</a>
+                    <a href="{% url 'main' %}#about" class="link-dark dropdown-item">О нас</a>
                 </li>
                 <li>
-                    <a href="#forest" class="link-dark dropdown-item">О лесах Амазонии</a>
+                    <a href="{% url 'main' %}#forest" class="link-dark dropdown-item">О лесах Амазонии</a>
                 </li>
                 <li>
-                    <a href="#excursion" class="link-dark dropdown-item">Об экскурсиях</a>
+                    <a href="{% url 'main' %}#excursion" class="link-dark dropdown-item">Об экскурсиях</a>
                 </li>
                 <li>
-                    <a href="#FAQ" class="link-dark dropdown-item">ЧаВО</a>
+                    <a href="{% url 'main' %}#FAQ" class="link-dark dropdown-item">ЧаВО</a>
                 </li>
             </ul>
         </li>
     </ul>
-{#    <a href="{% url news %}" target="_self" class="link-light">Новости</a>#}
+    <a href="{% url 'excursions' %}" target="_self" class="link-light">Экскурсии</a>
     <a href="#no-field-alert" class="link-light">Подписаться на рассылку</a>
 </nav>

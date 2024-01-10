@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+{% include "head.html" %}
+<body>
+{% include "up_nav.html" %}
+<main>
+    {% include "nav.html" %}
+    <div class="paragraph" id="excursion">
+        <h1>Об экскурсиях</h1>
+        <section>
+            <h2>План экскурсий</h2>
+            <p>
+                *Вставить информацию про проводимые экскурсии*
+            </p>
+        </section>
+        <section>
+            <h2>Оплата</h2>
+            <p>
+                *Вставить информацию про проводимые экскурсии*
+            </p>
+        </section>
+        <section>
+            <h2>Список экскурсоводов</h2>
+            <div class="row" id="tour-masters">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static '' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Сотрудник</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Узнать более подробно</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static '' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Сотрудник</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Узнать более подробно</a>
+                    </div>
+                </div>
+                <div class="card d-none d-md-block" style="width: 18rem;">
+                    <img src="{% static '' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Сотрудник</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Узнать более подробно</a>
+                    </div>
+                </div>
+                <div class="card d-none d-md-block" style="width: 18rem;">
+                    <img src="{% static '' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Сотрудник</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Узнать более подробно</a>
+                    </div>
+                </div>
+                <div class="card d-none d-lg-block" style="width: 18rem;">
+                    <img src="{% static '' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Сотрудник</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Узнать более подробно</a>
+                    </div>
+                </div>
+                <div class="card d-none d-lg-block" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Сотрудник</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Узнать более подробно</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<footer>
+    {% include 'footer.html' %}
+</footer>
+</body>
+</html>

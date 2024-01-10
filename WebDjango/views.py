@@ -68,5 +68,5 @@ def user_registration(request):
         return render(request, 'registration/create_new.html', {'form': form, "first": 1})
 
 
-# def news(request):
-#     return render(request, 'addition/news.html')
+def excursions(request):
+    return render(request, 'addition/Excursions.html')
