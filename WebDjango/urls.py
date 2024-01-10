@@ -31,4 +31,5 @@ urlpatterns = [
     path('excursions/', views.excursions, name='excursions'),
     path('subscribtion/', views.subscribtion, name='subscribtion'),
     path('quiz/', views.quiz, name='quiz'),
+    path('save/', views.save, name='subscribe_submit'),
 ]

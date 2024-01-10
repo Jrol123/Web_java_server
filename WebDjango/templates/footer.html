@@ -2,11 +2,11 @@
     <a class="text-light" href="https://github.com/Jrol123/Bootstrap-controlSite" target="_blank">
         Ссылка на <strong>github</strong>
     </a>
-    <button type="button" class="btn btn-primary btn-sm" id="alertButton" onclick="alert('Тестовое оповещение')">
+    <a type="button" class="text-light" id="alertButton" onclick="alert('Тестовое оповещение')" href="">
         Кнопка для проверки уведомлений
-    </button>
+    </a>
     {% if user.is_authenticated %}
-    <a type="button" class="btn btn-primary btn-sm" id="exitButton" href="{% url 'logout' %}?next={% url 'main' %}" target="_self">
+    <a class="text-light" id="exitButton" href="{% url 'logout' %}?next={% url 'main' %}" target="_self">
         Выход из аккаунта
     </a>
     {% endif %}

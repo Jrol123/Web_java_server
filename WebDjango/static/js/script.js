@@ -1,9 +1,9 @@
-const button_alert = document.getElementById("alertButton");
-console.log(button_alert);
-function alertTest(){
-    alert('Тестовое уведомление');
-}
-button_alert.onclick = alertTest;
+// const button_alert = document.getElementById("alertButton");
+// console.log(button_alert);
+// function alertTest(){
+//     alert('Тестовое уведомление');
+// }
+// button_alert.onclick = alertTest;
 
 function subscribe_call() {
     let text = document.getElementById("floatingInput").value;

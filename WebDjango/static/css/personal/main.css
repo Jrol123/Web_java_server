@@ -84,3 +84,11 @@ section{
 .alert-warning{
 	font-size: clamp(0.8rem, 4vw + 0.4rem, 1rem);
 }
+
+#subsc_div{
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}

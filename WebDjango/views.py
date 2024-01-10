@@ -9,7 +9,7 @@ from django.views.decorators.http import require_POST
 import json
 from django.views import View
 from django.contrib.auth.decorators import login_required
-from WebDjango.apps.account.models import (UserInfo, Animals, Roles)
+from WebDjango.apps.account.models import (UserInfo, Animals, Roles, Subscribe)
 from WebDjango.apps.account.forms import (LoginForm, RegistrationForm)
 
 
@@ -52,13 +52,16 @@ def user_registration(request):
                             patronymic=cd['patronymic'])
             info.save()
             animals = cd['favourite_animals']
+            end_animals = []
             for animal_name in animals:
-                info.favourite_animals.add(Animals.objects.get(animal_name=animal_name))
+                animal_name_real = Animals.objects.get(animal_name=animal_name)
+                info.favourite_animals.add(animal_name_real)
             return render(request, 'registration/congrats.html', {'first': cd['first_name'],
                                                                   'second': cd['last_name'],
                                                                   'third': cd['patronymic'],
                                                                   'town': cd['town'],
-                                                                  'phone': cd['phone']})
+                                                                  'phone': cd['phone'],
+                                                                  'animals':end_animals})
 
         else:
             return render(request, 'registration/create_new.html', {'form': form, "first": 0})
@@ -72,9 +75,19 @@ def excursions(request):
     return render(request, 'addition/Excursions.html')
 
 
-@login_required()
 def subscribtion(request):
     return render(request, 'addition/subscribtion.html')
+
+@require_POST
+@csrf_exempt
+def save(request):
+    text = request.POST.get('text')
+
+    obj = Subscribe(mail=text)
+    obj.save()
+
+    response_data = {'message': 'Данные успешно обработаны'}
+    return JsonResponse(response_data)
 
 
 def quiz(request):
