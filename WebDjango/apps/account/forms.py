@@ -28,15 +28,15 @@ class LoginForm(forms.Form):
         return cd['username']
 
 
-class CreateUserForm(forms.ModelForm):
-    user_name = forms.CharField(help_text="Введите имя аккаунта", required=True,
-                                label='Имя пользователя',
-                                widget=forms.TextInput(
-                                    attrs={
-                                        'class': "form-control",
-                                        'placeholder': ""
-                                    }
-                                ))
+class RegistrationForm(forms.Form):
+    username = forms.CharField(help_text="Введите имя аккаунта", required=True,
+                               label='Имя пользователя',
+                               widget=forms.TextInput(
+                                   attrs={
+                                       'class': "form-control",
+                                       'placeholder': ""
+                                   }
+                               ))
     password = forms.CharField(help_text="Введите пароль", required=True,
                                label='Пароль',
                                widget=forms.PasswordInput(
@@ -61,15 +61,15 @@ class CreateUserForm(forms.ModelForm):
                                          'placeholder': ""
                                      }
                                  ))
-    second_name = forms.CharField(help_text="Введите фамилию", required=True,
-                                  label='Фамилия',
-                                  widget=forms.TextInput(
-                                      attrs={
-                                          'class': "form-control",
-                                          'placeholder': ""
-                                      }
-                                  ))
-    third_name = forms.CharField(help_text="Введите отчество", required=True,
+    last_name = forms.CharField(help_text="Введите фамилию", required=True,
+                                label='Фамилия',
+                                widget=forms.TextInput(
+                                    attrs={
+                                        'class': "form-control",
+                                        'placeholder': ""
+                                    }
+                                ))
+    patronymic = forms.CharField(help_text="Введите отчество", required=True,
                                  label='Отчество',
                                  widget=forms.TextInput(
                                      attrs={
@@ -124,7 +124,7 @@ class CreateUserForm(forms.ModelForm):
     )
 
     def clean_user_name(self):
-        name = self.cleaned_data['user_name']
+        name = self.cleaned_data['username']
 
         name_list = User.objects.values('username')  # список свойств в формате:
         # [{'username': 'MyUsername1'}, {'username': 'MyUsername2'}, ...]

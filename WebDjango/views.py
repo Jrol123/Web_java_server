@@ -45,7 +45,7 @@ def user_registration(request):
                                             first_name=cd['first_name'],
                                             last_name=cd['last_name'])
             login(request, user)
-            role = Roles.objects.get(name=cd['role_name'])
+            role = Roles.objects.get(role_name=cd['role_name'])
             info = UserInfo(user_id=user.id, role_id=role.id,
                             town=cd['town'],
                             phone_number=cd['phone'],
@@ -61,7 +61,7 @@ def user_registration(request):
                                                                   'phone': cd['phone']})
 
         else:
-            return render(request, 'registration/registration.html', {'form': form, "first": 0})
+            return render(request, 'registration/create_new.html', {'form': form, "first": 0})
     else:
         form = RegistrationForm()
 
