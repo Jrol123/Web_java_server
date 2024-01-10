@@ -1,3 +1,7 @@
+main{
+	min-height: 500px;
+}
+
 #above-header{
 	text-align: end;
 	display: flex;

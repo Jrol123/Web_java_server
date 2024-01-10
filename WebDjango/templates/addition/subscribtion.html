@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+{% include 'head.html' %}
+<body>
+<main>
+    {% include 'up_nav.html' %}
+    <body>
+    {% include "nav.html" %}
+    <form style="margin: 1.5em 0">
+        <div class="row my-center my-container-subs" style="background: url({% static 'img/digital.png' %}) center">
+            <div class="my-center123"><h1 class="my-h">Амазонские новости</h1></div>
+            <div class="form-floating col-10" id="mail-inp">
+                <input type="email" class="my-form col-12" id="floatingInput" placeholder="name@example.com" required>
+            </div>
+            <div style="height: 1em"></div>
+            <button class="my-button col-11" id="button-inp" onclick="subscribe()">Подписаться на новостную рассылку
+            </button>
+            <div class="col-8 my-center my-thx" id="thx-id" style="display: none">
+                <p class="my-center my-thx">Спасибо за подписку</p>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        function subscribe() {
+            subscribe_call();
+        }
+    </script>
+
+    <!-- Javascript Inc-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
+
+    </body>
+</main>
+{% include 'footer.html' %}
+</body>
+</html>

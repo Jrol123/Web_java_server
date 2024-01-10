@@ -70,3 +70,12 @@ def user_registration(request):
 
 def excursions(request):
     return render(request, 'addition/Excursions.html')
+
+
+@login_required()
+def subscribtion(request):
+    return render(request, 'addition/subscribtion.html')
+
+
+def quiz(request):
+    return None

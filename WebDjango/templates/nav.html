@@ -12,14 +12,24 @@
                     <a href="{% url 'main' %}#forest" class="link-dark dropdown-item">О лесах Амазонии</a>
                 </li>
                 <li>
-                    <a href="{% url 'main' %}#excursion" class="link-dark dropdown-item">Об экскурсиях</a>
-                </li>
-                <li>
                     <a href="{% url 'main' %}#FAQ" class="link-dark dropdown-item">ЧаВО</a>
                 </li>
             </ul>
         </li>
     </ul>
     <a href="{% url 'excursions' %}" target="_self" class="link-light">Экскурсии</a>
-    <a href="#no-field-alert" class="link-light">Подписаться на рассылку</a>
+    <ul>
+        <li class="nav-item dropdown">
+            <a href="#" class="link-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">Дополнительно</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="{% url 'subscribtion' %}" class="link-dark dropdown-item">Подписаться на рассылку</a>
+                </li>
+                <li>
+                    <a href="{% url 'quiz' %}" class="link-dark dropdown-item">Опрос</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </nav>

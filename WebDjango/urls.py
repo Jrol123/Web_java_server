@@ -28,5 +28,7 @@ urlpatterns = [
     path('login_account', views.user_login, name='user_login'),
     path('registration', views.user_registration, name='registration'),
     path('account/', include('account.urls'), name='user_account'),
-    path('news/', views.excursions, name='excursions')
+    path('excursions/', views.excursions, name='excursions'),
+    path('subscribtion/', views.subscribtion, name='subscribtion'),
+    path('quiz/', views.quiz, name='quiz'),
 ]
