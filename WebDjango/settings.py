@@ -123,6 +123,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+# auto redirect after login
+LOGIN_REDIRECT_URL = '/'
+
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [

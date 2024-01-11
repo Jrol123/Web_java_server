@@ -1,95 +1,108 @@
-h1{
-	text-align: center;
-	font-size: clamp(2rem,6vw + 1.3em,5rem);
+main {
+    min-height: 500px;
 }
 
-h2{
-	font-size: clamp(1.5rem, 4vw + 1.1rem, 4rem);
+h1 {
+    text-align: center;
+    font-size: clamp(2rem, 6vw + 1.3em, 5rem);
 }
 
-h3{
-	font-size: clamp(1.3rem, 4vw + 1rem, 2rem);
+h2 {
+    font-size: clamp(1.5rem, 4vw + 1.1rem, 4rem);
 }
 
-h4{
-	font-size: clamp(1.2rem, 4vw + 0.8rem,1.7rem);
+h3 {
+    font-size: clamp(1.3rem, 4vw + 1rem, 2rem);
 }
 
-p{
-	font-size: clamp(1rem, 4vw + 0.4rem, 1.6rem);
-	padding: 0 3px;
+h4 {
+    font-size: clamp(1.2rem, 4vw + 0.8rem, 1.7rem);
 }
 
-.carousel-item{
-	height: auto;
-	max-height: 500px;
-	text-shadow: 1px 0 0px black,
-	0 1px 0px black,
-	-1px 0 0px black,
-	0 -1px 0px black;
+p {
+    font-size: clamp(1rem, 4vw + 0.4rem, 1.6rem);
+    padding: 0 3px;
 }
 
-.paragraph{
-	margin-top: clamp(2rem, 2vw + 1rem, 5rem);
+.carousel-item {
+    height: auto;
+    max-height: 500px;
+    text-shadow: 1px 0 0px black,
+    0 1px 0px black,
+    -1px 0 0px black,
+    0 -1px 0px black;
 }
 
-section{
-	margin: 2em 0;
+.paragraph {
+    margin-top: clamp(2rem, 2vw + 1rem, 5rem);
 }
 
-#tour-masters{
-	display: flex;
-	justify-content: space-around;
-	height: auto;
-	width: 100%;
+section {
+    margin: 2em 0;
 }
 
-#tour-masters a{
-	font-size: clamp(0.8rem, 4vw + 0.4rem, 1.6rem);
-	padding: 0 3px;
+#tour-masters {
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+    width: 100%;
 }
 
-.card{
-	margin: 5px 0;
+#tour-masters a {
+    font-size: clamp(0.8rem, 4vw + 0.4rem, 1.6rem);
+    padding: 0 3px;
 }
 
-.big-card{
-	max-height: 500px;
+.card {
+    margin: 5px 0;
 }
 
-#crumb{
-	font-size: 1.5em;
+.big-card {
+    max-height: 500px;
 }
 
-.breadcrumb{
-	margin-left: 3px;
+#crumb {
+    font-size: 1.5em;
 }
 
-.accordion-button:not(.collapsed){
-	background: dodgerblue;
+.breadcrumb {
+    margin-left: 3px;
 }
 
-.accordion-button.collapsed{
-	color: black
+.accordion-button:not(.collapsed) {
+    background: dodgerblue;
 }
 
-.accordion-button:not(.collapsed) h4{
-	color: white
+.accordion-button.collapsed {
+    color: black
 }
 
-#accordion-row{
-	width: 100%;
+.accordion-button:not(.collapsed) h4 {
+    color: white
 }
 
-.alert-warning{
-	font-size: clamp(0.8rem, 4vw + 0.4rem, 1rem);
+#accordion-row {
+    width: 100%;
 }
 
-#subsc_div{
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	justify-content: center;
-	align-items: center;
-	min-height: 500px;
+.alert-warning {
+    font-size: clamp(0.8rem, 4vw + 0.4rem, 1rem);
+}
+
+#subsc_div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+.quiz-center h3{
+    margin: 22px 0px;
+    text-align: center;
+}
+.quiz-center form{
+    margin: 5px 0px;
+    text-align: center;
 }

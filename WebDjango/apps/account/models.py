@@ -3,11 +3,13 @@ from django.contrib.auth.models import User
 
 
 class Animals(models.Model):
-    animal_name = models.CharField(max_length=15)
+    animal_name = models.CharField(max_length=3)
+    real_name = models.CharField(max_length=30, null=True)
 
 
 class Roles(models.Model):
-    role_name = models.CharField(max_length=50)
+    role_name = models.CharField(max_length=20)
+    real_name = models.CharField(max_length=30, null=True)
 
 
 class UserInfo(models.Model):
@@ -21,3 +23,11 @@ class UserInfo(models.Model):
 
 class Subscribe(models.Model):
     mail = models.CharField(max_length=20)
+
+
+class Question(models.Model):
+    name = models.CharField(max_length=10)
+
+class Quiz(models.Model):
+    "TODO: Дописать"
+    answer = models.ManyToManyField(Question)
