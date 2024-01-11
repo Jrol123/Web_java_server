@@ -63,7 +63,7 @@ def user_registration(request):
                                                                   'third': cd['patronymic'],
                                                                   'town': cd['town'],
                                                                   'phone': cd['phone'],
-                                                                  'animals':end_animals})
+                                                                  'animals': end_animals})
 
         else:
             return render(request, 'registration/create_new.html', {'form': form, "first": 0})
@@ -80,6 +80,7 @@ def excursions(request):
 def subscribtion(request):
     return render(request, 'addition/subscribtion.html')
 
+
 @require_POST
 @csrf_exempt
 def save(request):
@@ -92,5 +93,12 @@ def save(request):
     return JsonResponse(response_data)
 
 
+@login_required
 def quiz(request):
-    return None
+    return render(request, 'addition/quiz.html')
+
+
+@require_POST
+@csrf_exempt
+def save_quiz(request):
+    pass

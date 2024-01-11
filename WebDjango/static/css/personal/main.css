@@ -91,4 +91,5 @@ section{
 	align-content: center;
 	justify-content: center;
 	align-items: center;
+	min-height: 500px;
 }

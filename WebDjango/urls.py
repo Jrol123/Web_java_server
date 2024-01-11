@@ -29,7 +29,7 @@ urlpatterns = [
     path('registration', views.user_registration, name='registration'),
     path('account/', include('account.urls'), name='user_account'),
     path('excursions/', views.excursions, name='excursions'),
-    path('subscribtion/', views.subscribtion, name='subscribtion'),
+    path('subscribtion/', views.subscribtion, name='subscription'),
     path('quiz/', views.quiz, name='quiz'),
     path('save/', views.save, name='subscribe_submit'),
 ]
