@@ -9,41 +9,47 @@
 {% include 'up_nav.html' %}
 <main>
     {% include "nav.html" %}
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
+
     <div class="quiz-center my-container-quiz shadow p-3 mb-5 bg-body-tertiary" id="quiz-block1">
         <div id="sub-block1">
             <form class="quiz-form">
                 <h3>Кем вы являетесь?</h3>
                 <select class="form-select" aria-label="Пример выбора по умолчанию" id="my-program">
-                    <option value="int">Интересующийся</option>
-                    <option value="stu">Студент географического факультета</option>
-                    <option value="glu">Серёжа Глущенко</option>
-                    <option value="sci">Учёный-географ</option>
+                    <option value="Интересующийся">Интересующийся</option>
+                    <option value="Студент географического факультета">Студент географического факультета</option>
+                    <option value="Серёжа Глущенко">Серёжа Глущенко</option>
+                    <option value="Учёный-географ">Учёный-географ</option>
                 </select>
             </form>
             <form class="quiz-form">
                 <h3>Откуда узнали об этом сайте?</h3>
                 <select class="form-select" aria-label="Пример выбора по умолчанию" id="my-form-program">
-                    <option value="pre">От преподавателя</option>
-                    <option value="yes">Да</option>
-                    <option value="agr">От Артемия Громыко</option>
+                    <option value="Преподаватель">Преподаватель</option>
+                    <option value="Да">Да</option>
+                    <option value="Артемий Громыко">Артемий Громыко</option>
                 </select>
                 <h3>Вам тут нравится?</h3>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="firstRadioGroup" id="firstRadioDefault1" checked>
                     <label class="form-check-label" for="firstRadioDefault1">
-                        100%
+                        Очень
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="firstRadioGroup" id="firstRadioDefault2">
                     <label class="form-check-label" for="firstRadioDefault2">
-                        0%
+                        Не совсем
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="firstRadioGroup" id="firstRadioDefault3">
                     <label class="form-check-label" for="firstRadioDefault3">
-                        50%
+                        Нет
                     </label>
                 </div>
             </form>
@@ -94,6 +100,12 @@
                         Владислав Слободский
                     </label>
                 </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7">
+                    <label class="form-check-label" for="flexCheckDefault7">
+                        Стремление заработать
+                    </label>
+                </div>
             </form>
         </div>
         <div class="btn-continue row">
@@ -106,13 +118,13 @@
     <div class="quiz-center my-container-quiz shadow p-3 mb-5 bg-body-tertiary" id="quiz-block3">
         <div id="sub-block3" class="row">
             <div class="col-4 quiz-center" style="background-color: whitesmoke">
-                <p>Большинство опрошеных были <span id="answ1"></span>, узнавшими о сайте от <span
-                        id="answ2"></span> и им тут понравилось на <span id="answ3"></span></p>
+                <h4>Большинство опрошеных были <span id="answ1"></span>, узнавшими о сайте от <span
+                        id="answ2"></span> и им тут <span id="answ3"></span> понравилось</h4>
             </div>
             <div class="col-8">
                 <div class="row col-12 sub-quiz-div" style="background-color: whitesmoke">
                     <div class="col-9">
-                        Плохо работающая система переселения
+                        Флора
                     </div>
                     <div class="col-3">
                         <input id="result1" class="form-control" type="text" value="100%" aria-label="" disabled
@@ -121,7 +133,7 @@
                 </div>
                 <div class="row col-12 sub-quiz-div" style="background-color: whitesmoke">
                     <div class="col-9">
-                        Нехватка островных общежитий
+                        Фауна
                     </div>
                     <div class="col-3">
                         <input id="result2" class="form-control" type="text" value="100%" aria-label="" disabled
@@ -130,7 +142,7 @@
                 </div>
                 <div class="row col-12 sub-quiz-div" style="background-color: whitesmoke">
                     <div class="col-9">
-                        Нехватка автобусов
+                        История
                     </div>
                     <div class="col-3">
                         <input id="result3" class="form-control" type="text" value="100%" aria-label="" disabled
@@ -139,7 +151,7 @@
                 </div>
                 <div class="row col-12 sub-quiz-div" style="background-color: whitesmoke">
                     <div class="col-9">
-                        Несовершенная система РАУ
+                        Зачёт
                     </div>
                     <div class="col-3">
                         <input id="result4" class="form-control" type="text" value="100%" aria-label="" disabled
@@ -148,7 +160,7 @@
                 </div>
                 <div class="row col-12 sub-quiz-div" style="background-color: whitesmoke">
                     <div class="col-9">
-                        Низкое качество жизни в городских общежитиях
+                        Культурное наследие
                     </div>
                     <div class="col-3">
                         <input id="result5" class="form-control" type="text" value="100%" aria-label="" disabled
@@ -157,7 +169,7 @@
                 </div>
                 <div class="row col-12 sub-quiz-div" style="background-color: whitesmoke">
                     <div class="col-9">
-                        Отсутствие крытых мест для курения
+                        Владислав Слободский
                     </div>
                     <div class="col-3">
                         <input id="result6" class="form-control" type="text" value="100%" aria-label="" disabled
@@ -166,7 +178,7 @@
                 </div>
                 <div class="row col-12 sub-quiz-div" style="background-color: whitesmoke">
                     <div class="col-9">
-                        Нехватка точек общественного питания
+                        Стремление заработать
                     </div>
                     <div class="col-3">
                         <input id="result7" class="form-control" type="text" value="100%" aria-label="" disabled
@@ -178,20 +190,11 @@
     </div>
 </main>
 {% include 'footer.html' %}
-<script src="{% static 'js/script.js' %}"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
 
 <script>
     document.getElementById('quiz-block1').style.display = 'block';
     document.getElementById('quiz-block2').style.display = 'none';
     document.getElementById('quiz-block3').style.display = 'none';
-
-    $(window).resize(function () {
-        set_size();
-    });
-    set_size();
 
     function next1() {
         document.getElementById('quiz-block1').style.display = 'none';

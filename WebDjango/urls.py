@@ -33,4 +33,5 @@ urlpatterns = [
     path('quiz/', views.quiz, name='quiz'),
     path('save_quiz/', views.save_quiz, name='quiz_submit'),
     path('save/', views.save, name='subscribe_submit'),
+    path('statistic/', views.get_statistic, name='statistic'),
 ]

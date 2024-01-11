@@ -26,8 +26,13 @@ class Subscribe(models.Model):
 
 
 class Question(models.Model):
-    name = models.CharField(max_length=10)
+    name = models.CharField(max_length=21)
 
 class Quiz(models.Model):
-    "TODO: Дописать"
+    who = models.CharField(max_length=50, null=True)
+    # school
+    how_know = models.CharField(max_length=20, null=True)
+    # type
+    form = models.CharField(max_length=20, null=True)
+    # form
     answer = models.ManyToManyField(Question)

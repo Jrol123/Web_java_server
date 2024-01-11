@@ -9,7 +9,7 @@ from django.views.decorators.http import require_POST
 import json
 from django.views import View
 from django.contrib.auth.decorators import login_required
-from WebDjango.apps.account.models import (UserInfo, Animals, Roles, Subscribe)
+from WebDjango.apps.account.models import (UserInfo, Animals, Roles, Subscribe, Quiz, Question)
 from WebDjango.apps.account.forms import (LoginForm, RegistrationForm)
 
 
@@ -102,8 +102,8 @@ def quiz(request):
 @csrf_exempt
 def save_quiz(request):
     "TODO: Дописать"
-    obj = Quiz(school=request.POST.get('program'),
-               type=request.POST.get('type'),
+    obj = Quiz(who=request.POST.get('who'),
+               how_know=request.POST.get('how_know'),
                form=request.POST.get('form'))
     obj.save()
 
@@ -120,23 +120,23 @@ def get_statistic(request):
 
     count_of_people = 0
     who = [
-        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0],
         [0, 0, 0],
         [0, 0, 0]
     ]
     answers = [0, 0, 0, 0, 0, 0, 0]
 
     sub = {
-        "ИМКТ": 0, "ПИ": 1, "Восток": 2, "ЮШ": 3, "ШЭМ": 4, "Мед": 5,
-        "Бакалавриат": 0, "Магистратура": 1, "Аспирантура": 2,
-        "очно": 0, "заочно": 1, "очно-заочно": 2
+        "Интересующийся": 0, "Студент географического факультета": 1, "Серёжа Глущенко": 2, "Учёный-географ": 3,
+        "Преподаватель": 0, "Да": 1, "Артемий Громыко": 2,
+        "Очень": 0, "Не совсем": 1, "Нет": 2
     }
 
     for obj in Quiz.objects.values():
         count_of_people += 1
 
-        who[0][sub[obj['school']]] += 1
-        who[1][sub[obj['type']]] += 1
+        who[0][sub[obj['who']]] += 1
+        who[1][sub[obj['how_know']]] += 1
         who[2][sub[obj['form']]] += 1
 
     for obj in Quiz.objects.all():
@@ -144,30 +144,30 @@ def get_statistic(request):
             answers[sub['id'] - 1] += 1
 
     ind = 0
-    for i in range(5):
+    for i in range(3):
         if who[0][i] > who[0][ind]:
             ind = i
 
-    tmp = {0: "ИМКТ", 1: "ПИ", 2: "Института востоковеденья",
-           3: "ЮШ", 4: "ШЭМ", 5: "Меда"}
+    tmp = {0: "интересующимися", 1: "студентами географического факультета", 2: "серёжей Глущенко",
+           3: "учёными-географами"}
 
-    data['school'] = tmp[ind]
+    data['who'] = tmp[ind]
 
     ind = 0
     for i in range(3):
         if who[1][i] > who[1][ind]:
             ind = i
 
-    tmp = {0: "бaкалавриате", 1: "магистратуре", 2: "аспирантуре"}
+    tmp = {0: "преподавателя", 1: "<ДАННЫЕ УДАЛЕНЫ>", 2: "Артемия Громыко"}
 
-    data['type'] = tmp[ind]
+    data['how_know'] = tmp[ind]
 
     ind = 0
     for i in range(3):
         if who[2][i] > who[2][ind]:
             ind = i
 
-    tmp = {0: "очной", 1: "заочной", 2: "очно-заочной"}
+    tmp = {0: "очень", 1: "не совсем", 2: "не"}
 
     data['form'] = tmp[ind]
 

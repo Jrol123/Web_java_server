@@ -44,10 +44,10 @@ function get_result() {
     // получение данных
     let data = new FormData();
 
-    data.append('program', document.getElementById('my-program').value);
-    data.append('type', document.getElementById('my-form-program').value);
+    data.append('who', document.getElementById('my-program').value);
+    data.append('how_know', document.getElementById('my-form-program').value);
 
-    let types = {1: 'очно', 2: 'заочно', 3: 'очно-заочно'}
+    let types = {1: 'Очень', 2: 'Не совсем', 3: 'Нет'}
     for(let i = 1; i < 4; i++){
         if(document.getElementById('firstRadioDefault' + i.toString()).checked){
             data.append('form', types[i]);
@@ -77,13 +77,17 @@ function get_result() {
                 type: 'GET',
                 success: function (response) {
 
-                    document.getElementById('answ1').innerHTML = response['school'];
-                    document.getElementById('answ2').innerHTML = response['type'];
+                    document.getElementById('answ1').innerHTML = response['who'];
+                    document.getElementById('answ2').innerHTML = response['how_know'];
                     document.getElementById('answ3').innerHTML = response['form'];
 
                     for(let i = 1; i < 8; i++){
                         document.getElementById('result' + i.toString()).value = response['percent'][i - 1].toString() + '%';
                     }
+
+                    document.getElementById('quiz-block1').style.display = 'none';
+                    document.getElementById('quiz-block2').style.display = 'none';
+                    document.getElementById('quiz-block3').style.display = 'block';
 
                     console.log(response);
                 }
