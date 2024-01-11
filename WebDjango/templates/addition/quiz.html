@@ -9,110 +9,105 @@
 {% include 'up_nav.html' %}
 <main>
     {% include "nav.html" %}
-    <div class="row quiz-center my-container-quiz shadow p-3 mb-5 bg-body-tertiary" id="quiz-block1">
+    <div class="quiz-center my-container-quiz shadow p-3 mb-5 bg-body-tertiary" id="quiz-block1">
         <div id="sub-block1">
             <form class="quiz-form">
-                <h3>Какая часть тропических лесов Амазонки расположена в Бразилии?</h3>
+                <h3>Кем вы являетесь?</h3>
                 <select class="form-select" aria-label="Пример выбора по умолчанию" id="my-program">
-                    <option value="l10"><= 10</option>
-                    <option value="b10">> 10 <= 30</option>
-                    <option value="l70">> 30 <= 70</option>
-                    <option value="b70">> 70</option>
+                    <option value="int">Интересующийся</option>
+                    <option value="stu">Студент географического факультета</option>
+                    <option value="glu">Серёжа Глущенко</option>
+                    <option value="sci">Учёный-географ</option>
                 </select>
             </form>
             <form class="quiz-form">
-                <h3>Форма обучения:</h3>
+                <h3>Откуда узнали об этом сайте?</h3>
                 <select class="form-select" aria-label="Пример выбора по умолчанию" id="my-form-program">
-                    <option value="Бакалавриат">Бакалавриат/специалитет</option>
-                    <option value="Магистратура">Магистратура</option>
-                    <option value="Аспирантура">Аспирантура</option>
+                    <option value="pre">От преподавателя</option>
+                    <option value="yes">Да</option>
+                    <option value="agr">От Артемия Громыко</option>
                 </select>
-                <br>
+                <h3>Вам тут нравится?</h3>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="firstRadioGroup" id="firstRadioDefault1" checked>
                     <label class="form-check-label" for="firstRadioDefault1">
-                        Очно
+                        100%
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="firstRadioGroup" id="firstRadioDefault2">
                     <label class="form-check-label" for="firstRadioDefault2">
-                        Заочно
+                        0%
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="firstRadioGroup" id="firstRadioDefault3">
                     <label class="form-check-label" for="firstRadioDefault3">
-                        Очно-заочно
+                        50%
                     </label>
                 </div>
             </form>
         </div>
-        <div class="row">
-            <div class="col-8"></div>
+        <div class="btn-continue row">
+            <br>
+            <br>
             <button onclick="next1()" type="button" class="btn btn-secondary col-4">Продолжить</button>
         </div>
     </div>
-    <div class="row quiz-center my-container-quiz shadow p-3 mb-5 bg-body-tertiary" id="quiz-block2">
+    <div class="quiz-center my-container-quiz shadow p-3 mb-5 bg-body-tertiary" id="quiz-block2">
         <div id="sub-block2">
             <form class="quiz-form" id="my-quiz-form1">
-                <p>Выберите наиболее актуальные по вашему мнению существующие проблемы</p>
+                <h3>Что вас больше всего интересует в лесах амазонки?</h3>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
                     <label class="form-check-label" for="flexCheckDefault1">
-                        Плохо работающая система переселения
+                        Флора
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
                     <label class="form-check-label" for="flexCheckDefault2">
-                        Нехватка островных общежитий
+                        Фауна
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
                     <label class="form-check-label" for="flexCheckDefault3">
-                        Нехватка автобусов
+                        История
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
                     <label class="form-check-label" for="flexCheckDefault4">
-                        Несовершенная система РАУ
+                        Зачёт
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
                     <label class="form-check-label" for="flexCheckDefault5">
-                        Низкое качество жизни в городских общежитиях
+                        Культурное наследие
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
                     <label class="form-check-label" for="flexCheckDefault6">
-                        Отсутствие крытых мест для курения
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7">
-                    <label class="form-check-label" for="flexCheckDefault7">
-                        Нехватка точек общественного питания
+                        Владислав Слободский
                     </label>
                 </div>
             </form>
         </div>
-        <div class="row" style="margin: 0 auto;">
-            <div class="col-8"></div>
-            <button onclick="next2()" type="button" id="resultButton1" class="btn btn-primary col-4">К результатам
-            </button>
+        <div class="btn-continue row">
+            <br>
+            <br>
+            <button onclick="next2()" type="button" class="btn btn-secondary col-4">К результатам</button>
         </div>
     </div>
 
-    <div class="row quiz-center my-container-quiz shadow p-3 mb-5 bg-body-tertiary" id="quiz-block3">
+    <div class="quiz-center my-container-quiz shadow p-3 mb-5 bg-body-tertiary" id="quiz-block3">
         <div id="sub-block3" class="row">
             <div class="col-4 quiz-center" style="background-color: whitesmoke">
-                <p>Большинство опрошеных были студентами <span id="answ1"></span> обучающимеся на <span
-                        id="answ2"></span> по <span id="answ3"></span> форме обучения</p>
+                <p>Большинство опрошеных были <span id="answ1"></span>, узнавшими о сайте от <span
+                        id="answ2"></span> и им тут понравилось на <span id="answ3"></span></p>
             </div>
             <div class="col-8">
                 <div class="row col-12 sub-quiz-div" style="background-color: whitesmoke">

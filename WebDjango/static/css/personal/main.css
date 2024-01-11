@@ -98,6 +98,10 @@ section {
     min-height: 500px;
 }
 
+.quiz-center{
+    padding: 5px 0px;
+}
+
 .quiz-center h3{
     margin: 22px 0px;
     text-align: center;
@@ -105,4 +109,10 @@ section {
 .quiz-center form{
     margin: 5px 0px;
     text-align: center;
+}
+
+.btn-continue{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 }
