@@ -116,3 +116,8 @@ section {
     justify-content: flex-end;
     flex-wrap: wrap;
 }
+
+.form-control:disabled{
+    border: var(--bs-border-width) #c5e2ff solid;
+    background: white;
+}
