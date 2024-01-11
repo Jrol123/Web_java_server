@@ -82,7 +82,8 @@ function get_result() {
                     document.getElementById('answ3').innerHTML = response['form'];
 
                     for(let i = 1; i < 8; i++){
-                        document.getElementById('result' + i.toString()).value = response['percent'][i - 1].toString() + '%';
+                        document.getElementById('result' + i.toString()).value = response['percent'][i - 1].toString();
+                        // document.getElementById('result-text' + i.toString()).value = response['percent'][i - 1].toString();
                     }
 
                     document.getElementById('quiz-block1').style.display = 'none';
