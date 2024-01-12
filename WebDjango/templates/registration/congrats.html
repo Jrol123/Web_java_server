@@ -3,31 +3,26 @@
 
 {% load static %}
 
-<!--TODO: Протестировать дизайн -->
 {% include 'head.html' %}
 
 <body>
 <div class="signinform">
 
-    <!-- container -->
-    <div class="container">
-        <!-- main content -->
-        <div class="w3l-form-info">
-            <div class="w3_info">
-                <!-- Сделать через for -->
-                <p>Спасибо за регистрацию, {{ second }} {{ first }} {{ third }} проживающий(ая) в городе {{ town }}
-                    с номером телефона {{ phone }} и имеющая следующих любимых животных:</p>
-                {% for anml in animals %}
-                    <p>{{ anml }}</p>
-                {% endfor %}
-                <br>
-                <p><a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-                      href="{% url 'main' %}">Вернуться на главную</a></p>
-            </div>
+    <!-- main content -->
+    <div class="w3l-form-info" id="congrats-form">
+        <div class="w3_info" id="congrats">
+            <!-- Сделать через for -->
+            <p>Спасибо за регистрацию, {{ second }} {{ first }} {{ third }} проживающий(ая) в городе {{ town }}
+                с номером телефона {{ phone }} и имеющая следующих любимых животных:</p>
+            {% for anml in animals %}
+                <p>{{ anml }}</p>
+            {% endfor %}
+            <br>
+            <p><a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                  href="{% url 'main' %}">Вернуться на главную</a></p>
         </div>
-        <!-- //main content -->
     </div>
-    <!-- //container -->
+    <!-- //main content -->
 
 
 </div>

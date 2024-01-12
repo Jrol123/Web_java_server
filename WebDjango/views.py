@@ -101,7 +101,6 @@ def quiz(request):
 @require_POST
 @csrf_exempt
 def save_quiz(request):
-    "TODO: Дописать"
     obj = Quiz(who=request.POST.get('who'),
                how_know=request.POST.get('how_know'),
                form=request.POST.get('form'))
