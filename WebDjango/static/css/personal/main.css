@@ -1,5 +1,5 @@
 main {
-    min-height: 45vmax;
+    min-height: 38vmax;
 }
 
 h1 {
@@ -90,7 +90,7 @@ section {
 }
 
 /*TODO: Починить отображение в полноэкранном режиме*/
-#congrats-form{
+#congrats-form {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -100,7 +100,7 @@ section {
     height: 100vmax;
 }
 
-#congrats{
+#congrats {
     text-align: center;
     width: 50vw;
     background: #eeeeee;
@@ -115,30 +115,36 @@ section {
     min-height: 500px;
 }
 
-.quiz-center{
+.quiz-center {
     padding: 5px 0px;
 }
 
-.quiz-center h3{
+.quiz-center h3 {
     margin: 22px 0px;
     text-align: center;
 }
-.quiz-center form{
+
+.quiz-center form {
     margin: 5px 0px;
     text-align: center;
 }
 
-.btn-continue{
+.btn-continue {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
 }
 
-.form-control:disabled{
+.form-control:disabled {
     border: var(--bs-border-width) #c5e2ff solid;
     background: white;
 }
 
-#results{
-    font-size: clamp(0.8rem,2vw + 0.2vw,2rem);
+#results {
+    font-size: clamp(0.8rem, 2vw + 0.2vw, 2rem);
+}
+
+.result-exit {
+    display: flex;
+    font-size: clamp(0.8rem, 1.3vw + 0.2vw, 1.5rem);
 }
